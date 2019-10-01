@@ -6,19 +6,19 @@ import requests
 from telethon import events
 from uniborg.util import admin_cmd
 
-
+SCREEN_SHOT_LAYER_ACCESS_KEY = "8dd46e1dbbdaf72017883771c315338c"
 @borg.on(admin_cmd("screencapture (.*)"))
 async def _(event):
     if event.fwd_from:
         return
-    if Config.SCREEN_SHOT_LAYER_ACCESS_KEY is None:
+    if SCREEN_SHOT_LAYER_ACCESS_KEY is None:
         await event.edit("Need to get an API key from https://screenshotlayer.com/product \nModule stopping!")
         return
     await event.edit("Processing ...")
     sample_url = "https://api.screenshotlayer.com/api/capture?access_key={}&url={}&fullpage={}&viewport={}&format={}&force={}"
     input_str = event.pattern_match.group(1)
     response_api = requests.get(sample_url.format(
-        Config.SCREEN_SHOT_LAYER_ACCESS_KEY,
+        SCREEN_SHOT_LAYER_ACCESS_KEY,
         input_str,
         "1",
         "2560x1440",
