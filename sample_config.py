@@ -17,7 +17,7 @@ class Config(object):
     # Get your own APPID from https://api.openweathermap.org/data/2.5/weather
     OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
     # Get your own ACCESS_KEY from http://api.screenshotlayer.com/api/capture
-    SCREEN_SHOT_LAYER_ACCESS_KEY = os.environ.get("SCREEN_SHOT_LAYER_ACCESS_KEY", None)
+    SCREEN_SHOT_LAYER_ACCESS_KEY = os.environ.get("8dd46e1dbbdaf72017883771c315338c", None)
     # Send .get_id in any group to fill this value.
     PRIVATE_GROUP_BOT_API_ID = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID", -100123456789))
     # Send .get_id in any channel to fill this value. ReQuired for @Manuel15 inspiration to work!
